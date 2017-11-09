@@ -5,7 +5,7 @@ int lengthOfLongestSubstring(char* s) {
     maxSubLen = LSubstring_start = 0;
     
     for(i = 0; c = s[i]; i++){
-        if(alphabet[c] > LSubstring_start)           //寻找最长子串的起始位置
+        if(alphabet[c] > LSubstring_start)           //判断当前重复的字符是否在上一个重复区间内，如果不是就计算长度
             LSubstring_start = alphabet[c];
         if((i - LSubstring_start + 1) > maxSubLen)
             maxSubLen = i - LSubstring_start + 1;
