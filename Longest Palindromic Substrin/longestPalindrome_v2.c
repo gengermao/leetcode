@@ -1,13 +1,14 @@
 char* longestPalindrome(char* s) {
     char c;
     int i, j;
-    int tempBegin, begin, len, maxLen, isHavePal;
+    int tempBegin, begin, len, maxLen, isHavePal, strLen;
     char *temp;
     
-    tempBegin = begin = len = isHavePal = 0;
+    strLen = strlen(s);
+    i = j = tempBegin = begin = len = isHavePal = 0;
     maxLen = 1;
     
-    for(i = 0; s[i] != '\0'; i++){
+    for(i = 0; (i+1+j) <strLen && s[i] != '\0'; i++){
         for(j = 0; j <= i; j++){
             if(s[i-j] == s[i+1+j]){
                 tempBegin = i - j;
